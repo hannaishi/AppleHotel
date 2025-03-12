@@ -1,0 +1,45 @@
+@use "../global" as g;
+
+/*!
+layout > footer
+------------------------------
+*/
+.footer {
+    margin-top: 93px;
+    padding-bottom: 96px;
+
+    @include g.mq() {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 7.5%;
+        padding-bottom: 93px;
+    }
+}
+.footer-ul {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-font-dark-blue);
+    align-items: center;
+    gap: 30px;
+    line-height: 1;
+    font-size: 24px;
+    margin-bottom: 48px;
+
+
+    @include g.mq() {
+        flex-direction: row;
+        font-size: 20px;
+        justify-content: space-between;
+        margin-bottom: 0;
+    }
+
+}
+.copyright {
+    font-size: 16px;
+    text-align: center;
+    color: var(--color-font-dark-blue);
+
+    @include g.mq() {
+        text-align: left;
+    }
+}

@@ -1,0 +1,139 @@
+@use "../global" as g;
+
+/*!
+top > top-interior
+------------------------------
+*/
+.sp-interior {
+    margin: 34px auto;
+    height: auto;
+
+    @include g.mq() {
+        display: none;
+    }
+}
+.sp-interior-left-title {
+    font-size: 48px;
+    font-family: var(--font-family-title);
+    color: var(--color-font-white);
+    background-color: var(--color-bg-right-blue);
+    height: 60px;
+    text-align: center;
+    line-height: 1.5;
+}
+.sp-interior-left {
+    margin-bottom: 28px;
+}
+.sp-interior-left-text {
+    line-height: 2.3;
+    width: 95%;
+    margin: 10px auto 0;
+    color: var(--color-font-grey);
+    background-color: var(--color-bg-primary);
+    font-size: 14px;
+}
+
+//////////////////////////////////////
+
+.sp-interior-right-title {
+    @extend .sp-interior-left-title;
+}
+
+.sp-interior-right {
+    @extend .sp-interior-left;
+}
+.sp-interior-right-text {
+    @extend .sp-interior-left-text;
+}
+
+
+
+//////////////////////////////////////
+
+.interior {
+    display: none;
+
+    @include g.mq() {
+        display: block;
+        margin: 132px auto;
+        height: 200vh;
+        width: 90%;
+    }
+}
+
+.interior-left-title {
+
+    @include g.mq() {
+        font-family: var(--font-family-title);
+        color: var(--color-font-white);
+        background-color: var(--color-bg-right-blue);
+        font-size: 62px;
+        height: 74px;
+        padding-left: 40px;
+        text-align: left;
+    }
+}
+
+.interior-left {
+
+    @include g.mq() {
+        position: relative;
+        top: 0;
+        left: 0;
+        margin-bottom: 250px;
+
+        img {
+            width: 70%;
+        }
+    }
+}
+.interior-left-container {
+
+    @include g.mq() {
+        position: absolute;
+        top: 40%;
+        left: 30%;
+        max-width: 100%;
+        z-index: 99;
+    }
+}
+.interior-left-text {
+
+    @include g.mq() {
+        color: var(--color-font-grey);
+        background-color: var(--color-bg-primary);
+        width: 100%;
+        padding: 20px 40px;
+    }
+}
+
+
+//////////////////////////////////////
+
+.interior-right-title {
+    @extend .interior-left-title;
+}
+
+.interior-right {
+    @extend .interior-left;
+
+    @include g.mq() {
+        img {
+            position: absolute;
+            right: 0;
+        }
+    }
+}
+.interior-right-container {
+    @extend .interior-left-container;
+
+    @include g.mq() {
+        position: absolute;
+        width: 70%;
+        left: 0;
+        padding-top: 200px;
+    }
+}
+.interior-right-text {
+    @extend .interior-left-text;
+}

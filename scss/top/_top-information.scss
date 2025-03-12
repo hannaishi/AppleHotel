@@ -1,0 +1,165 @@
+@use "../global" as g;
+
+/*!
+top > top-information
+------------------------------
+*/
+.information {
+    margin-top: 80px;
+    padding-bottom: 80px;
+    background-image: url(../img/bg_information_sp.jpg);
+    background-image: image-set(url(../img/bg_information_sp.jpg) 1x, url(../img/bg_information_sp.jpg) 2x);
+    background-image: -webkit-image-set(url(../img/bg_information_sp.jpg) 1x, url(../img/bg_information_sp.jpg) 2x);
+    background-position: top;
+    background-size: cover;
+    position: relative;
+    color: var(--color-font-white);
+
+    @include g.mq() {
+        margin-top: 0;
+        padding-bottom: 0;
+        background-image: url(../img/bg_blue.png);
+        background-image: image-set(url(../img/bg_blue.png) 1x, url(../img/bg_blue.png) 2x);
+        background-image: -webkit-image-set(url(../img/bg_blue.png) 1x, url(../img/bg_blue.png) 2x);
+    }
+}
+
+.info-title {
+    position: absolute;
+    width: 100%;/* 全体幅に対するテキスト領域の割合 */
+    display: flex;
+    flex-direction: column;
+    top: -55px;
+    left: 50%;
+    transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+
+
+    @include g.mq() {
+        top: -84px;
+    }
+}
+
+.info-title-container {
+    position: relative;
+    font-family: var(--font-family-title);
+    letter-spacing: 0.2px;
+    font-size: 60px;
+
+    @include g.mq() {
+        font-size: 92px;/* テキストのフォントサイズ */
+        width: 100%;
+        height: 84px;/* テキスト1行あたりの高さ指定 */
+    }
+}
+
+.info-title-background {
+
+    &::before {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+            -webkit-transform: translateX(-50%);
+            -ms-transform: translateX(-50%);
+        z-index: 2;
+        color: var(--color-font-white);/* 重ねた部分の文字色となる */
+        white-space: nowrap;/* テキストの改行禁止 */
+    }
+
+    &.info-title-background1 {
+        &::before {
+            content: "Information";/* 重ねる対象のテキスト入力 */
+        }
+    }
+}
+.info-title-main {
+    position: relative;
+    z-index: 3;
+    display: block;
+    overflow: hidden;/* この指定ではみ出した元テキストを非表示化 */
+    width: 100%;
+    height: 56px;
+
+    @include g.mq() {
+        height: 100%;
+    }
+}
+.info-title-inner {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+        -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+    color: var(--color-font-info-blue);/* 重ならない部分のテキスト色 */
+    white-space: nowrap;/* テキストの改行禁止 */
+}
+
+.information-flex {
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    width: 85%;
+    margin: 0 auto;
+
+    @include g.mq() {
+        flex-direction: row;
+        margin: 0 auto 55px;
+        padding-top: 0;
+        width: 55%;
+        padding-bottom: 103px;
+
+        &:nth-child(2) {
+            padding-top: 103px;
+            padding-bottom: 0;
+        }
+
+        &:nth-child(3) {
+            padding-top: 0;
+            padding-bottom: 0;
+            margin-bottom: 90px;
+        }
+    }
+}
+.information-daytime {
+    max-width: 185px;
+    font-family: var(--font-family-title);
+    font-size: 18px;
+    border-bottom: 4px solid;
+
+    @include g.mq() {
+        position: relative;
+        padding-right: 20px;
+        border-bottom: 0;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            background-color: var(--color-bg-white);
+            width: 4px;
+            height: 146px;
+            margin: 0 25px 0 20px;
+        }
+    }
+}
+.information-box {
+
+    @include g.mq() {
+        padding-left: 25px;
+    }
+}
+.information-title {
+    font-size: 18px;
+    padding-bottom: 10px;
+
+    @include g.mq() {
+        font-size: 20px;
+        padding-bottom: 0;
+    }
+}
+.information-text {
+    font-size: 18px;
+}

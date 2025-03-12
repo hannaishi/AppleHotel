@@ -1,0 +1,222 @@
+@use "../global" as g;
+
+/*!
+top > top-recommend
+------------------------------
+*/
+.recommend {
+    margin-top: 50px;
+
+    @include g.mq() {
+        margin-top: 100px;
+    }
+}
+.recommend-title {
+    margin-left: 20%;
+    width: 80%;
+    color: var(--color-font-right-blue);
+    font-family: var(--font-family-title);
+    line-height: 0.75;
+    font-size: 48px;
+    border-bottom: 5px solid var(--color-underline-right-blue);
+
+    @include g.mq() {
+        text-align: left;
+        margin-left: 65%;
+        padding-top: 20px;
+        color: var(--color-font-right-blue);
+        font-family: var(--font-family-title);
+        line-height: 0.75;
+        font-size: 80px;
+        border-bottom: 8px solid var(--color-underline-right-blue);
+        display: inline-block;
+        width: 35%;
+    }
+}
+
+.recommend-flex {
+    display: flex;
+    flex-direction: column;
+    margin: 25px 5% 0;
+    position: relative;
+    gap: 30px;
+
+
+    @include g.mq() {
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 0;
+    }
+}
+
+//////////////////////////////////////
+
+.recommend-left {
+
+    @include g.mq() {
+        width: 85%;
+        margin-left: 11%;
+        position: relative;
+
+        img {
+            width: 100%;
+            padding-bottom: 250px;
+            margin-top: -100px;
+        }
+    }
+}
+.left-banner-title01 {
+    position: absolute;
+    bottom: 71.5%;
+    left: 57%;
+    z-index: 90;
+    font-size: 24px;
+    color: var(--color-font-dark-blue);
+
+    @include g.mq() {
+        width: 100%;
+        top: -8%;
+        left: 70%;
+        color: var(--color-font-dark-blue);
+        font-size: 52px;
+    }
+}
+.dli-arrow-left01 {
+    position: absolute;
+    top: 28%;
+    right: -5%;
+    width: 48%;
+    height: 3px;
+    border-radius: 9999px;
+    background-color: #0079b0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 2px);
+        right: 0;
+        width: 20px;
+        height: 3px;
+        border-radius: 9999px;
+        background-color: #0079b0;
+        transform: rotate(48deg);
+        transform-origin: calc(100% - 2px) 50%;
+    }
+
+    @include g.mq() {
+        position: relative;
+        top: -82%;
+        left: 70%;
+        display: inline-block;
+        width: 100%;
+        height: 3px;
+        border-radius: 9999px;
+        background-color: #0079b0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: calc(50% - 2px);
+            right: 0;
+            width: 25px;
+            height: 3px;
+            border-radius: 9999px;
+            background-color: #0079b0;
+            transform: rotate(48deg);
+            transform-origin: calc(100% - 2px) 50%;
+        }
+    }
+}
+
+//////////////////////////////////////
+
+.recommend-right {
+
+    @include g.mq() {
+        width: 100%;
+        position: relative;
+        margin-left: 27%;
+
+        img {
+            width: 90%;
+            margin-top: 158px;
+        }
+    }
+}
+.right-banner-title01 {
+    position: absolute;
+    bottom: 15%;
+    left: -5%;
+    z-index: 90;
+    font-size: 24px;
+    color: var(--color-font-dark-blue);
+
+    @include g.mq() {
+        width: 100%;
+        top: 50%;
+        left: -52%;
+        font-size: 52px;
+    }
+}
+.dli-arrow-right01 {
+    position: absolute;
+    bottom: 15%;
+    left: -5%;
+    width: 48%;
+    height: 3px;
+    border-radius: 9999px;
+    background-color: #0079b0;
+
+    &::before {
+        content: "";
+        position: absolute;
+        top: calc(50% - 2px);
+        right: 0;
+        width: 20px;
+        height: 3px;
+        border-radius: 9999px;
+        background-color: #0079b0;
+        transform: rotate(48deg);
+        transform-origin: calc(100% - 2px) 50%;
+    }
+
+    @include g.mq() {
+        position: relative;
+        top: -29%;
+        left: -52%;
+        display: inline-block;
+        width: 85%;
+        height: 3px;
+        // margin-top: 29px;
+        border-radius: 9999px;
+        background-color: #0079b0;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: calc(50% - 2px);
+            right: 0;
+            width: 25px;
+            height: 3px;
+            border-radius: 9999px;
+            background-color: #0079b0;
+            transform: rotate(48deg);
+            transform-origin: calc(100% - 2px) 50%;
+        }
+    }
+}
+
+//////////////////////////////////////
+
+.left-banner-title02 {
+    @extend .left-banner-title01;
+}
+.right-banner-title02 {
+    @extend .right-banner-title01;
+}
+.dli-arrow-left02 {
+    @extend .dli-arrow-left01;
+}
+.dli-arrow-right02 {
+    @extend .dli-arrow-right01;
+}
